@@ -103,6 +103,7 @@ p.products {
   max-width: 1200px;
   margin: auto;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .product-card {
@@ -192,5 +193,6 @@ footer {
 
 p.availability {
   font-weight: bold;
-  color: #CEAB93;
+  color: #705545;
 }
+
