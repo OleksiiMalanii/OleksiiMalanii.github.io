@@ -2,9 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+  <div class="menu">
+    <button onclick="toggleMenu()" class="menu-btn">
+      <img src="img/sandwich-menu.svg" alt="">
+    </button>
+    <h1>Спортивний магазин Snike</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Товари</a></li>
+      <li><a href="offers.html">Акції</a></li>
+      <li><a href="profile.html">Мій профіль</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="basket.html"><img src="img/shoping-cart.svg" alt="Корзина" class="basket"></a></li>
+    </ul>
+  </nav>
+</header>
+<p></p>
+<main>
+  <section class="profile-section">
+    <div class="profile-info">
+      <h3 class="profile-heading">Personal Information</h3>
+      <ul class="info-list">
+        <li><strong>Name:</strong> John Doe</li>
+        <li><strong>Email:</strong> <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+1234567890">+123 456 7890</a></li>
+        <li><strong>Address:</strong> 123 Main Street, Kyiv, Ukraine</li>
+      </ul>
+    </div>
 
+    <div class="profile-purchase-history">
+      <h3 class="profile-heading">Purchase History</h3>
+      <table class="purchase-table">
+        <thead>
+        <tr>
+          <th>Product</th>
+          <th>Date</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Sports Backpack</td>
+          <td>2023-09-12</td>
+          <td>$50</td>
+        </tr>
+        <tr>
+          <td>Running Shoes</td>
+          <td>2023-08-10</td>
+          <td>$85</td>
+        </tr>
+        <tr>
+          <td>Fitness Tracker</td>
+          <td>2023-07-15</td>
+          <td>$110</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="profile-wishlist">
+      <h3 class="profile-heading">Wishlist Items</h3>
+      <div class="grid-container">
+        <div class="product-card">
+          <img src="img/product4.jpg" alt="Gym Bag">
+          <h3>Gym Bag</h3>
+          <p><strong>$45</strong></p>
+          <p class="rating">⭐⭐⭐⭐☆ (4.2)</p>
+        </div>
+        <div class="product-card">
+          <img src="img/product5.jpg" alt="Smart Watch">
+          <h3>Smart Watch</h3>
+          <p><strong>$150</strong></p>
+          <p class="rating">⭐⭐⭐⭐⭐ (5.0)</p>
+        </div>
+        <div class="product-card">
+          <img src="img/product6.jpg" alt="Yoga Mat">
+          <h3>Yoga Mat</h3>
+          <p><strong>$30</strong></p>
+          <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<p></p>
+
+<footer>
+  <p>&copy; 2025 Спортивний магазин | Контакти: oleksii.malanii.shi.2023@lpnu.ua</p>
+</footer>
+<script src="menu.js"></script>
 </body>
 </html>

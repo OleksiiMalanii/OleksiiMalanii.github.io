@@ -8,15 +8,20 @@
 </head>
 <body>
 <header>
-  <h1>Спортивний магазин Snike</h1>
+  <div class="menu">
+    <button onclick="toggleMenu()" class="menu-btn">
+      <img src="img/sandwich-menu.svg" alt="">
+    </button>
+    <h1>Спортивний магазин Snike</h1>
+  </div>
   <nav>
     <ul>
       <li><a href="index.html">Головна</a></li>
-      <li><a href="products.html" class="active">Товари</a></li>
+      <li><a href="products.html">Товари</a></li>
       <li><a href="offers.html">Акції</a></li>
       <li><a href="profile.html">Мій профіль</a></li>
       <li><a href="about.html">Про нас</a></li>
-      <li><a href="#"><img src="img/shoping-cart.svg" alt="Корзина" class="basket"></a></li>
+      <li><a href="basket.html"><img src="img/shoping-cart.svg" alt="Корзина" class="basket"></a></li>
     </ul>
   </nav>
 </header>
@@ -115,7 +120,8 @@
   </section>
 </main>
 <footer>
-  <p>© 2023 Спортивний магазин Snike. Всі права захищено.</p>
+  <p>&copy; 2024 Спортивний магазин Snike. Всі права захищено.</p>
 </footer>
+<script src="menu.js"></script>
 </body>
 </html>

@@ -8,57 +8,29 @@
 </head>
 <body>
 <header>
-  <h1>Спортивний магазин Snike</h1>
+  <div class="menu">
+    <button onclick="toggleMenu()" class="menu-btn">
+      <img src="img/sandwich-menu.svg" alt="">
+    </button>
+    <h1>Спортивний магазин Snike</h1>
+  </div>
   <nav>
     <ul>
-      <li><a href="index.html">Головна</a></li>
-      <li><a href="products.html">Товари</a></li>
+      <li><a href="index.html">Товари</a></li>
       <li><a href="offers.html">Акції</a></li>
       <li><a href="profile.html">Мій профіль</a></li>
-      <li><a href="basket.html" class="active">Корзина</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="basket.html"><img src="img/shoping-cart.svg" alt="Корзина" class="basket"></a></li>
     </ul>
   </nav>
 </header>
 <main>
-  <section class="basket">
-    <h2>Корзина</h2>
-    <p>Ось список товарів, які ви додали до корзини:</p>
-    <table class="basket-table">
-      <thead>
-      <tr>
-        <th>Зображення</th>
-        <th>Назва</th>
-        <th>Ціна</th>
-        <th>Кількість</th>
-        <th>Видалити</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><img src="img/nikes/1.WebP" alt="OZWEEGO" class="basket-item-image"></td>
-        <td>OZWEEGO</td>
-        <td>4 499 грн</td>
-        <td>1</td>
-        <td><button class="remove-item">Видалити</button></td>
-      </tr>
-      <tr>
-        <td><img src="img/nikes/JH6944_01_00_standard.WebP" alt="Lightblaze" class="basket-item-image"></td>
-        <td>Lightblaze</td>
-        <td>3 999 грн</td>
-        <td>1</td>
-        <td><button class="remove-item">Видалити</button></td>
-      </tr>
-      </tbody>
-    </table>
-    <div class="basket-summary">
-      <p><strong>Загальна сума:</strong> 8 498 грн</p>
-      <button class="btn-clear-basket">Очистити корзину</button>
-      <button class="btn-checkout">Оформити замовлення</button>
-    </div>
-  </section>
+
+
 </main>
 <footer>
-  <p>© 2023 Спортивний магазин Snike. Всі права захищено.</p>
+  <p>2025 Спортивний магазин | Контакти: oleksii.malanii.shi.2023@lpnu.ua</p>
 </footer>
+<script src="menu.js"></script>
 </body>
 </html>

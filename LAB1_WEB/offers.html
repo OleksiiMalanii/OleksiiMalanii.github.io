@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Offers</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+  <div class="menu">
+    <button onclick="toggleMenu()" class="menu-btn">
+      <img src="img/sandwich-menu.svg" alt="">
+    </button>
+    <h1>Спортивний магазин Snike</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Товари</a></li>
+      <li><a href="offers.html">Акції</a></li>
+      <li><a href="profile.html">Мій профіль</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="basket.html"><img src="img/shoping-cart.svg" alt="Корзина" class="basket"></a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="offers-section">
+    <h2 class="section-title">Special Offers & Discounts</h2>
+    <p class="availability">Grab these exclusive deals before they're gone!</p>
+    <div class="grid-container">
 
+      <div class="product-card">
+        <img src="img/product1.jpg" alt="Product 1">
+        <h3>Running Shoes</h3>
+        <p><del>$120</del> <strong>$85</strong></p>
+        <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+      </div>
+
+      <div class="product-card">
+        <img src="img/product2.jpg" alt="Product 2">
+        <h3>Sports Backpack</h3>
+        <p><del>$70</del> <strong>$50</strong></p>
+        <p class="rating">⭐⭐⭐⭐⭐ (5.0)</p>
+      </div>
+
+      <div class="product-card">
+        <img src="img/product3.jpg" alt="Product 3">
+        <h3>Fitness Tracker</h3>
+        <p><del>$150</del> <strong>$110</strong></p>
+        <p class="rating">⭐⭐⭐⭐☆ (4.3)</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy;  2025 Спортивний магазин | Контакти: oleksii.malanii.shi.2023@lpnu.ua</p>
+</footer>
+<script src="menu.js"></script>
 </body>
 </html>

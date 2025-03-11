@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Про нас</title>
+  <title>About Us</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
-  <h1>Спортивний магазин Snike</h1>
+  <div class="menu">
+    <button onclick="toggleMenu()" class="menu-btn">
+      <img src="img/sandwich-menu.svg" alt="">
+    </button>
+    <h1>Спортивний магазин Snike</h1>
+  </div>
   <nav>
     <ul>
-      <li><a href="index.html">Головна</a></li>
-      <li><a href="products.html">Товари</a></li>
+      <li><a href="index.html">Товари</a></li>
       <li><a href="offers.html">Акції</a></li>
       <li><a href="profile.html">Мій профіль</a></li>
       <li><a href="about.html">Про нас</a></li>
@@ -22,36 +26,39 @@
 </header>
 
 <main>
-  <section class="section">
-    <h2 class="section-title">Про наш магазин</h2>
-    <p class="products">
-      Наш спортивний магазин пропонує широкий вибір якісних товарів для спорту та активного способу життя.
-      Ми прагнемо забезпечити наших клієнтів найкращими товарами за доступними цінами.
-      Від тренувального одягу до спортивного взуття — ми маємо все, що вам потрібно для комфортного та ефективного тренування.
-    </p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>About Us</h1>
+      <p>Explore our journey and vision to create a successful future for everyone.</p>
+    </div>
   </section>
 
-  <section class="section">
-    <h2 class="section-title">Наша історія</h2>
-    <p class="products">
-      Заснований у 2023 році, наш магазин швидко здобув популярність серед любителів спорту завдяки високій якості товарів
-      та зручному обслуговуванню. Ми співпрацюємо тільки з перевіреними брендами, тому наші клієнти можуть бути впевнені в надійності продукції.
-    </p>
+  <section class="about-content">
+    <div class="about-container">
+      <h2>Who We Are</h2>
+      <p>
+        We are a forward-thinking company dedicated to excellence in every aspect
+        of our work. With a focus on creating meaningful solutions, we aim to inspire
+        change and growth across all industries.
+      </p>
+    </div>
   </section>
 
-  <section class="section">
-    <h2 class="section-title">Контакти</h2>
-    <p class="products">
-      Якщо у вас є будь-які питання, зв'яжіться з нами:<br>
-      Телефон: +380 (93) 123-4567<br>
-      Email: info@sportshop.com<br>
-      Адреса: вул. Спортивна, 123, Київ, Україна
-    </p>
+  <section class="team" >
+    <h2 style="text-align: center;">Our Team</h2>
+    <div class="grid-container">
+      <div class="product-card">
+        <img src="team1.jpg" alt="Team Member 1">
+        <h3>Oleksii Malanii</h3>
+        <p>CEO & Founder</p>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p>© 2023 Спортивний магазин. Всі права захищено.</p>
+  <p>&copy; 2025 Спортивний магазин | Контакти: oleksii.malanii.shi.2023@lpnu.ua</p>
 </footer>
+<script src="menu.js"></script>
 </body>
 </html>
