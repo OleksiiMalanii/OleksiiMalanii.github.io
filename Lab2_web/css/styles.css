@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 1px 0;
+    font-size: 24px;
+}
+
+.initiatives-section, .my-initiatives-section {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.initiatives-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.initiative {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.joined {
+    background-color: #c3f7c3;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.menu button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu button:hover {
+    background: #0056b3;
+}
+

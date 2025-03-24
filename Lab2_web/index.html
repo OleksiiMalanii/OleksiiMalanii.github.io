@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Волонтерська платформа</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<header>
+    <h1>Волонтерська платформа</h1>
+    <nav class="menu">
+        <button onclick="alert('Перейти до головної')">Головна</button>
+        <button onclick="alert('Список ініціатив')">Ініціативи</button>
+        <button onclick="alert('Про нас')">Про нас</button>
+        <button onclick="alert('Контакти')">Контакти</button>
+    </nav>
+</header>
+<main>
+    <section class="initiatives-section">
+        <h2>Актуальні волонтерські ініціативи</h2>
+        <div id="initiatives" class="initiatives-container"></div>
+    </section>
+    <section class="my-initiatives-section">
+        <h2>Мої ініціативи</h2>
+        <div id="myInitiatives" class="initiatives-container"></div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 Волонтерська платформа.</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
