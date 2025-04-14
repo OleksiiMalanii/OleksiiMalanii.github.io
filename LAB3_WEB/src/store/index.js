@@ -18,11 +18,20 @@ export default createStore({
                 initiative.joined = true;
                 initiative.volunteersNeeded--;
             }
+        },
+        registerInitiative(state, initiativeId) {
+            const initiative = state.initiatives.find(i => i.id === initiativeId);
+            if (initiative) {
+                initiative.joined = true;
+            }
         }
     },
     actions: {
         joinInitiative({ commit }, initiativeId) {
             commit('joinInitiative', initiativeId);
+        },
+        registerInitiative({ commit }, initiativeId) {
+            commit('registerInitiative', initiativeId);
         }
     },
     getters: {

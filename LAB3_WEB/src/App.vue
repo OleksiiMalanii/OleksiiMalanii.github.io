@@ -1,16 +1,14 @@
 <template>
   <div class="app-container">
-    <div class="container">
-      <nav>
-        <router-link to="/">Доступні ініціативи</router-link>
-        <router-link to="/my">Мої ініціативи</router-link>
-        <router-link to="/about">Про нас</router-link>
-      </nav>
+    <nav>
+      <router-link to="/">Доступні ініціативи</router-link>
+      <router-link to="/my">Мої ініціативи</router-link>
+      <router-link to="/about">Про нас</router-link>
+    </nav>
 
-      <main class="content">
-        <router-view />
-      </main>
-    </div>
+    <main class="content">
+      <router-view />
+    </main>
 
     <footer>
       <p>© 2025 Ініціативи Добра | Усі права захищені</p>
