@@ -1,11 +1,35 @@
 <template>
-  <div class="my-initiatives-container">
-    <h1>Мої ініціативи</h1>
-    <div v-for="initiative in myInitiatives" :key="initiative.id" class="initiative-card">
-      <h2>{{ initiative.name }}</h2>
-      <p>{{ initiative.description }}</p>
-      <p>Потрібно волонтерів: {{ initiative.volunteersNeeded }}</p>
-      <p>Кінцевий термін: {{ initiative.endDate }}</p>
+  <div class="my-initiatives">
+    <h2>Мої ініціативи</h2>
+    <div v-if="myInitiatives.length">
+      <ul>
+        <li
+            v-for="initiative in myInitiatives"
+            :key="initiative.id"
+            class="initiative-item"
+        >
+          <div class="initiative-details">
+            <h3>{{ initiative.title }}</h3>
+            <p>
+              <strong>Місце:</strong> {{ initiative.location }} <br>
+              <strong>Дата:</strong> {{ initiative.date }} <br>
+              <strong>Тип:</strong> {{ initiative.type }} <br>
+              <strong>Опис:</strong> {{ initiative.description }}
+            </p>
+            <p class="volunteers">
+              <strong>Волонтерів потрібно:</strong> {{ initiative.volunteersNeeded }}
+            </p>
+
+            <div v-if="initiative.registeredName && initiative.registeredEmail" class="registered-info">
+              <p><strong>Зареєстровано як:</strong> {{ initiative.registeredName }}</p>
+              <p><strong>Email:</strong> {{ initiative.registeredEmail }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div v-else>
+      <p>Поки що немає зареєстрованих ініціатив.</p>
     </div>
   </div>
 </template>
@@ -16,51 +40,55 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'MyInitiatives',
   computed: {
+    ...mapGetters(['initiatives']),
     myInitiatives() {
-      return this.$store.getters.initiatives.filter(i => i.joined);
+      return this.initiatives.filter((item) => item.joined);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.my-initiatives-container {
+.my-initiatives {
   padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  color: #333;
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.initiative-card {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
+  background: #fff;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  color: #444;
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-p {
-  color: #555;
-  font-size: 1em;
-  margin: 5px 0;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.initiative-card:hover {
-  background-color: #f1f1f1;
-  border-color: #ccc;
+.initiative-item {
+  margin: 10px 0;
+  background: #f7f7f7;
+  border-radius: 6px;
+  padding: 15px;
+  transition: box-shadow 0.3s;
+}
+
+.initiative-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.initiative-details h3 {
+  margin-bottom: 8px;
+}
+
+.volunteers {
+  margin-top: 8px;
+}
+
+.registered-info {
+  margin-top: 10px;
+  background: #e0ffe0;
+  padding: 10px;
+  border-radius: 6px;
 }
 </style>

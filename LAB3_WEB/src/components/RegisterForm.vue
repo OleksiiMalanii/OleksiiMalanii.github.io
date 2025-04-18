@@ -20,14 +20,19 @@ export default {
       form: {
         name: '',
         email: '',
-        initiativeId: ''
+        initiativeId: this.$route.params.id
       }
     };
   },
   methods: {
     submitForm() {
-      this.$store.dispatch('registerInitiative', this.form.initiativeId);
-      console.log('User registered:', this.form);
+      this.$store.dispatch('registerInitiative', {
+        initiativeId: parseInt(this.form.initiativeId),
+        form: {
+          name: this.form.name,
+          email: this.form.email
+        }
+      });
       this.$router.push('/my');
     }
   }

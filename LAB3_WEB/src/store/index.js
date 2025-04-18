@@ -3,39 +3,121 @@ import { createStore } from 'vuex';
 export default createStore({
     state: {
         initiatives: [
-            { id: 1, name: 'Допомога в Дитячих будинках', description: 'Допомога дітям', volunteersNeeded: 5, endDate: '2025-06-30', joined: false },
-            { id: 2, name: 'Прибирання парків', description: 'Прибирання сміття', volunteersNeeded: 10, endDate: '2025-06-30', joined: false },
-            { id: 3, name: 'Допомога літнім людям', description: 'Допомога старшим', volunteersNeeded: 8, endDate: '2025-06-30', joined: false },
-            { id: 4, name: 'Збір коштів для безпритульних', description: 'Збір коштів', volunteersNeeded: 15, endDate: '2025-06-30', joined: false },
-            { id: 5, name: 'Організація культурних заходів', description: 'Культурні заходи', volunteersNeeded: 12, endDate: '2025-06-30', joined: false },
-            { id: 6, name: 'Екологічні акції', description: 'Еко акції', volunteersNeeded: 20, endDate: '2025-06-30', joined: false }
+            {
+                id: 1,
+                title: 'Еко-проєкт',
+                description: 'Деталі...',
+                location: 'Київ',
+                date: '2025-05-01',
+                type: 'ecology',
+                volunteersNeeded: 5,
+                joined: false
+            },
+            {
+                id: 2,
+                title: 'Допомога тваринам',
+                description: 'Деталі...',
+                location: 'Львів',
+                date: '2025-04-15',
+                type: 'animals',
+                volunteersNeeded: 10,
+                joined: false
+            },
+            {
+                id: 3,
+                title: 'Соціальна підтримка',
+                description: 'Деталі...',
+                location: 'Одеса',
+                date: '2025-06-01',
+                type: 'social',
+                volunteersNeeded: 8,
+                joined: false
+            },
+            {
+                id: 4,
+                title: 'Культурний захід',
+                description: 'Деталі...',
+                location: 'Харків',
+                date: '2025-07-01',
+                type: 'culture',
+                volunteersNeeded: 15,
+                joined: false
+            },
+            {
+                id: 5,
+                title: 'Спортивний захід',
+                description: 'Деталі...',
+                location: 'Дніпро',
+                date: '2025-08-01',
+                type: 'sports',
+                volunteersNeeded: 20,
+                joined: false
+            },
+            {
+                id: 6,
+                title: 'Мистецький фестиваль',
+                description: 'Деталі...',
+                location: 'Івано-Франківськ',
+                date: '2025-09-15',
+                type: 'art',
+                volunteersNeeded: 12,
+                joined: false
+            },
+            {
+                id: 7,
+                title: 'Освітній семінар',
+                description: 'Деталі...',
+                location: 'Чернівці',
+                date: '2025-10-10',
+                type: 'education',
+                volunteersNeeded: 8,
+                joined: false
+            },
+            {
+                id: 8,
+                title: 'Благодійний концерт',
+                description: 'Деталі...',
+                location: 'Запоріжжя',
+                date: '2025-11-20',
+                type: 'charity',
+                volunteersNeeded: 25,
+                joined: false
+            }
         ]
     },
+
     mutations: {
-        joinInitiative(state, initiativeId) {
-            const initiative = state.initiatives.find(i => i.id === initiativeId);
-            if (initiative && !initiative.joined && initiative.volunteersNeeded > 0) {
+        registerInitiative(state, { initiativeId, form }) {
+            const initiative = state.initiatives.find(
+                (item) => item.id === initiativeId
+            );
+
+            if (initiative && !initiative.joined) {
                 initiative.joined = true;
-                initiative.volunteersNeeded--;
-            }
-        },
-        registerInitiative(state, initiativeId) {
-            const initiative = state.initiatives.find(i => i.id === initiativeId);
-            if (initiative) {
-                initiative.joined = true;
+
+
+                if (initiative.volunteersNeeded > 0) {
+                    initiative.volunteersNeeded -= 1;
+                }
+
+
+                initiative.registeredName = form.name;
+                initiative.registeredEmail = form.email;
             }
         }
     },
+
     actions: {
-        joinInitiative({ commit }, initiativeId) {
-            commit('joinInitiative', initiativeId);
-        },
-        registerInitiative({ commit }, initiativeId) {
-            commit('registerInitiative', initiativeId);
+        registerInitiative({ commit }, { initiativeId, form }) {
+            commit('registerInitiative', { initiativeId, form });
         }
     },
+
     getters: {
-        initiatives: state => state.initiatives,
-        availableInitiatives: state => state.initiatives.filter(i => new Date(i.endDate) > new Date())
+        initiatives: (state) => state.initiatives,
+        availableInitiatives: (state) =>
+            state.initiatives.filter(
+                (i) => new Date(i.date) >= new Date() && i.volunteersNeeded > 0
+            )
     }
 });

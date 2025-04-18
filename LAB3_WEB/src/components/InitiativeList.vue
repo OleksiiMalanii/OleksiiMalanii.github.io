@@ -13,12 +13,17 @@
     </div>
 
     <div class="cards">
-      <InitiativeCard v-for="initiative in filteredInitiatives" :key="initiative.id" :initiative="initiative" />
+      <InitiativeCard
+          v-for="initiative in filteredInitiatives"
+          :key="initiative.id"
+          :initiative="initiative"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import InitiativeCard from './InitiativeCard.vue';
 
 export default {
@@ -27,11 +32,6 @@ export default {
   },
   data() {
     return {
-      initiatives: [
-        { id: 1, title: 'Еко-проєкт', description: '...', location: 'Київ', date: '2025-05-01', type: 'ecology' },
-        { id: 2, title: 'Допомога тваринам', description: '...', location: 'Львів', date: '2025-04-15', type: 'animals' },
-        { id: 3, title: 'Соціальна підтримка', description: '...', location: 'Одеса', date: '2025-06-01', type: 'social' }
-      ],
       filters: {
         type: '',
         date: '',
@@ -40,17 +40,22 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['initiatives']),
+
     filteredInitiatives() {
-      return this.initiatives.filter(initiative => {
+      return this.initiatives.filter((initiative) => {
         return (
             (!this.filters.type || initiative.type === this.filters.type) &&
             (!this.filters.date || initiative.date === this.filters.date) &&
-            (!this.filters.location || initiative.location.toLowerCase().includes(this.filters.location.toLowerCase()))
+            (!this.filters.location ||
+                initiative.location
+                    ?.toLowerCase()
+                    .includes(this.filters.location.toLowerCase()))
         );
       });
     }
   }
-}
+};
 </script>
 
 <style scoped>
